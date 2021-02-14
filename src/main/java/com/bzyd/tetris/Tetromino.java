@@ -88,15 +88,10 @@ public  abstract class Tetromino {
 	 */
 	public void rotateRight(){
 		index++;
-		//s = S1->S2->S3->S0->S1->S2...
 		State s = states[index%states.length];
-		// s=[row0,col0] [row1,col1] 
-		//   [row2,col2] [row3,col3]
-		//�᣿cells[0]
 		Cell o = this.cells[0];
 		int row = o.getRow();
 		int col = o.getCol();
-		//cell[1]
 		cells[1].setRow(row + s.row1);
 		cells[1].setCol(col + s.col1);
 		cells[2].setRow(row + s.row2);
@@ -110,7 +105,6 @@ public  abstract class Tetromino {
 	 */
 	public void rotateLeft(){
 		index--;
-		//s = S1<-S2<-S3<-S0<-S1<-S2...
 		State s = states[index%states.length];
 		Cell o = this.cells[0];
 		int row = o.getRow();
